@@ -1,1 +1,18 @@
 /* Your code here */
+ul {
+    display: flex;
+    width: 900px;
+    flex-wrap: wrap;
+}
+
+li {
+    border: 20px;
+    border-color: black;
+    width: 100px;
+    background-color: grey;
+
+}
+
+li:hover {
+    background-color: yellow;
+}
