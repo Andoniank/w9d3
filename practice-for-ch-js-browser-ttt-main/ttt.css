@@ -1,18 +1,59 @@
 /* Your code here */
+
+
 ul {
     display: flex;
-    width: 900px;
+    height: 450px;
+    width: 600px;
     flex-wrap: wrap;
 }
 
 li {
-    border: 20px;
+    border: 2px black solid;
     border-color: black;
-    width: 100px;
+    width: 150px;
+    height: 150px;
     background-color: grey;
-
+    list-style-type: none;
+    cursor: pointer;
 }
 
 li:hover {
     background-color: yellow;
+}
+
+/* li:active {
+    background-color: white;
+} */
+
+.x, .o {
+    background-color: white;
+    /* width: 100%; */
+}
+
+.x:after,
+.o:after {
+    display: flex;
+    font-size: 60px;
+    width: 100%;
+    line-height: 80px;
+    justify-content: center;
+}
+
+.x:after {
+    content: "x";
+    color: red;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.o:after {
+    content: "o";
+    color: green;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+
+.x:hover,
+.o:hover {
+    background-color: white;
 }

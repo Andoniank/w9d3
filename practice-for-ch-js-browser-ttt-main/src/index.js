@@ -6,8 +6,8 @@ import Game from "../ttt_node/game"
 
 
 document.addEventListener("DOMContentLoaded", () => {
-  const container = document.querySelector(".ttt")
+  const container = document.querySelector(".ttt");
+  const game = new Game()
+  const view = new View(game, container)
 });
 
-const game = new Game()
-const view = new View()

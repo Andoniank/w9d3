@@ -1,10 +1,11 @@
 
+        
 class View {
   constructor(game, el) {
-    this.game = game
-    this.el = el
-    this.handleClick = this.handleClick.bind(this)
-    this.setupBoard()
+    this.game = game;
+    this.el = el;
+    this.handleClick = this.handleClick.bind(this);
+    this.setupBoard();
   }
   
   setupBoard() {
@@ -16,20 +17,32 @@ class View {
         grid.append(square)
       }
     }
-    this.el.append(grid)
+    // console.log(this.el)
     this.el.addEventListener("click", this.handleClick)
+    return this.el.append(grid)
   }
   
   handleClick(e) {
     const square = e.target
-    this.makeMove(square)
+    console.log(square)
+    const move = JSON.parse(square.dataset.position);
+    const mark = this.game.currentPlayer;
+    this.game.playMove(move);
+    square.classList.add(mark);
   }
 
-  makeMove(square) {
-
-  }
+  // makeMove(square) {
+    
+  
+  // }
   
   handleGameOver() {
+    if (this.game.isOver()) {
+      this.el.classList.add("game-over");
+    }
+    const winner = this.game.winner();
+    const msg = document.createElement("figcaption");
+    winner ? (this.el.classList(`winner-${winner}`), msg.append(`You win ${winner}`)) : msg.append("It's a draw"), this.el.append(msg)
   }
 }
 
